@@ -1,9 +1,24 @@
+"use client";
+import Image from "next/image";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const [firstEffectComplete, setFirstEffectComplete] = useState(false);
+
+  useEffect(() => {
+    // Simulate the completion of the first TextGenerateEffect
+    const timer = setTimeout(() => {
+      setFirstEffectComplete(true);
+    }, 1000); // Adjust the duration as needed
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -21,13 +36,39 @@ const Hero = () => {
       </div>
 
       <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Test
-          </h2>
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] w-full flex items-center justify-between">
+          <div className="flex flex-col">
+            <TextGenerateEffect
+              className="text-3xl md:text-4xl text-white lg:text-5xl tracking-tighter"
+              words="Web Developer"
+            ></TextGenerateEffect>
+            {firstEffectComplete && (
+              <>
+                <TextGenerateEffect
+                  className="text-2xl md:text-3xl lg:text-4xl text-blue tracking-tighter"
+                  words="Eguin Jonathan"
+                ></TextGenerateEffect>
+              </>
+            )}
+            <p
+              className={`text-white font-light text-xs md:text-sm lg:text-lg`}
+            >
+              a Developer based in Indonesia
+            </p>
+          </div>
 
-          <TextGenerateEffect className="text-4xl text-center" words="Web Developer sdfsdf dfsdf sdfsdf"></TextGenerateEffect>
-
+          <div>
+            <Image
+              src="/hero.png"
+              alt="hero"
+              width={524}
+              height={590}
+              className={`md:w-96 w-36 object-contain transition-all duration-500 ${
+                isLoaded ? "" : "blur-lg"
+              }`}
+              onLoadingComplete={() => setIsLoaded(true)}
+            />
+          </div>
         </div>
       </div>
     </div>
