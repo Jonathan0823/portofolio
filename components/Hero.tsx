@@ -26,7 +26,7 @@ const Hero = () => {
             Test
           </h2>
 
-          <TextGenerateEffect className="text-4xl" words="Web Developer sdfsdf dfsdf sdfsdf"></TextGenerateEffect>
+          <TextGenerateEffect className="text-4xl text-center" words="Web Developer sdfsdf dfsdf sdfsdf"></TextGenerateEffect>
 
         </div>
       </div>
