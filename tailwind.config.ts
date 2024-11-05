@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: {
+          DEFAULT: "#000",
+          100: "#000319"
+        }
       },
     },
   },
