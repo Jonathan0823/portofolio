@@ -51,7 +51,9 @@ const Hero = () => {
               </>
             )}
             <p
-              className={`text-white font-light text-xs md:text-sm lg:text-lg`}
+              className={`transition-opacity transition-filter duration-1000 ease-in-out ${
+                firstEffectComplete ? "opacity-100 blur-0" : "opacity-0 blur-lg"
+              } text-white font-light text-xs md:text-sm lg:text-lg`}
             >
               a Developer based in Indonesia
             </p>
