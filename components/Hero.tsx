@@ -68,7 +68,7 @@ const Hero = () => {
               className={`md:w-96 w-36 object-contain transition-all duration-500 ${
                 isLoaded ? "" : "blur-lg"
               }`}
-              onLoadingComplete={() => setIsLoaded(true)}
+              onLoad={() => setIsLoaded(true)}
             />
           </div>
         </div>
