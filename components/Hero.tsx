@@ -39,13 +39,13 @@ const Hero = () => {
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] w-full flex items-center justify-between">
           <div className="flex flex-col">
             <TextGenerateEffect
-              className="text-3xl md:text-4xl text-white lg:text-5xl tracking-tighter"
+              className="text-3xl md:text-4xl text-white lg:text-6xl tracking-tighter"
               words="Web Developer"
             ></TextGenerateEffect>
             {firstEffectComplete && (
               <>
                 <TextGenerateEffect
-                  className="text-2xl md:text-3xl lg:text-4xl text-blue tracking-tighter"
+                  className="text-2xl md:text-3xl lg:text-5xl text-blue tracking-tighter"
                   words="Eguin Jonathan"
                 ></TextGenerateEffect>
               </>
