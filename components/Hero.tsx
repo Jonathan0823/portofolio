@@ -18,7 +18,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 h-screen">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -65,7 +65,7 @@ const Hero = () => {
               alt="hero"
               width={524}
               height={590}
-              className={`md:w-96 w-36 object-contain transition-all duration-500 ${
+              className={`lg:w-96 md:w-72 w-36 object-contain transition-all duration-500 ${
                 isLoaded ? "" : "blur-lg"
               }`}
               onLoad={() => setIsLoaded(true)}
